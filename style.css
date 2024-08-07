@@ -1,0 +1,346 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@font-face {
+    font-family: "Android";
+    src: url('pacote-projeto-d010/fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+/* material de estudo SOBRE:
+    MARGEM
+    ORGANIZAÇÃO EM VARIAVEL
+    TRANSIÇÃO
+    EMOJI COMO SÍMBOLO DE LISTAS (OBS:funciona somente no chrome/Opera/Microsoft Edge)
+    RESPONSIVIDADE
+    ORGNIZAÇÃO DE TAMANHOS
+    */
+:root{
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e ; /*variaveis de cor exemplo de usar variaveis em html5*/
+    --fonte_padrao: Arial,Helvetica,sans-serif; 
+    --fonte_destaque: Bebas Neue, cursive;
+    --fonte_android: 'Android', cursive;    
+}
+*{
+    
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color: var(--cor0);
+    font-family: var(--fonte_padrao);
+}       
+a.externo::after{
+content: '\1F517';
+}
+header{
+    padding-top: 40px;
+    text-align: center;
+    min-height: 150px;
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+}/*cabeçalho da pagina 
+alinhado com text-align 
+colorido com degradê
+altura min de 150px
+e um padding top de 40px
+    */
+header  h1{
+    font-weight: normal;
+    text-shadow: 2px 2px 0px rgb(26, 26, 26)  ;
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: var(--fonte_destaque);
+    color: white
+}
+/*TITULOS CABEÇALHOS
+
+font_weight: normal para deixar o formato de tamanho da fonte normal
+text-shadow usado com o devtools para criar um sombra
+font-size 3em para deixar em um altura maior
+margin-bottom para ter um espaço do lado de baixo como uma linha
+font-family para determinar qual sera a font utilizada na escrita
+*/
+header > p{
+    text-shadow: 2px 2px 0px rgba(26, 26, 26, 0.26)  ;
+    font-family: var(--fonte_padrao);
+    font-size: 1.2em;
+    max-width: 600px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    color: white;
+    margin-bottom: 20px;
+}
+/*PARAGRÁFOS CABEÇALHO
+
+text-shadow para fazer sombra com ajuda do DevTools
+font_family: para determinar o tipo de fonte novamente também utilizando variaveis ja determinadas
+font-size novamente determinando altura da fonte
+max-width determinar a largura maxima que o texto irá preencher
+padding right para determinar o preenchimento direito dentro da caixa
+padding left para determinar o preenchimento esquerdo dentro da caixa
+margin auto para centralizar os itens
+margint buttom para ter um espaçamento entre a caixa abaixo
+ 
+*/
+nav{
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.192);
+    padding: 10px;
+    background-color: var(--cor5);
+}
+/* MENU DE NAVEGAÇÃO
+box-shadow criar uma sobra na caixa
+paddding preenchimento da caixa
+
+
+*/
+nav > a{
+    border-radius: 5px;
+    font-weight: bold;
+    color: var(--cor1);
+    padding: 10px;
+    text-decoration: none;
+    transition-duration: 1s;
+}
+/*link da NAVEGAÇÃO
+
+border-radius para deixar mais arredondado
+font-weight para dar um contraste
+padding para preencher melhor
+text-decoration none para remover o sublinhado
+transition-duration 1s para deixar mais suave na vizibilidade
+
+*/
+nav > a:hover{
+
+    background-color: var(--cor3);
+    padding: 10px;
+    text-decoration: none;
+}
+/*link da NAVEGAÇÃO quando passados
+text-decoration permanece none para não sublinhar
+padding
+color diferente em tons mais claros para deixar uma sensação de iluminar 
+
+
+*/
+main{
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgb(37, 37, 37);
+    max-width: 1000px;
+    margin-bottom: 30px;
+    border-radius: 0px 0px 10px 10px;
+    min-width: 300px;
+    background-color: white;
+}
+/*
+CONTEÚDO PRINCIPAL
+
+margin auto para alinha ao centro
+padding para preencher melhor 
+box-shadow para suavizar o branco 
+bg branco
+min-width: 300px Já que celulares menores são 320px
+margin-bottom para deixar um margem abaixo do segundo conteudo
+border radius para deixar arredondado lugares específicos
+
+*/
+main  h1{
+    font-weight: normal;
+    color: var(--cor5);
+    font-family: var(--fonte_android);
+    font-size: 1.8em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+}
+/*
+TITULOS DO CONTEÚDO PRINCIPAL
+
+font-weight: normal por conta que h1 já tem muito destaque
+color 5 por ser a mais escura e dar contraste sobre o branco
+font-size 1.8em para aumentar o tamanho da fonte
+background color degradê de cor fraca até transparente
+de modo que deixe a fonte forte suavizar com o bg
+
+*/
+main  h2{
+    font-weight: normal;
+    color: var(--cor4);
+    font-family: var(--fonte_android);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 8px;
+}
+/*
+SUBTÍTULO DO CONTEUDO PRINCIPAL
+
+font-weight normal 
+color 4 por ser fraca comparada a 5
+font-size 1.3 aumentar o tamanho
+bg da mesma forma que o h1 
+text indent para deixar um espaço na primeira linha como um paragrafo
+
+*/
+main p{
+    font-size: 1em;
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 2em;
+}
+/*PARAGRAFOS DO CONTEÚDO PRINCIPAL
+
+font-size: 1em
+margin: 15px 0px | paradeixar bordas de cima e baixo 15px de espaçamento
+text-algn justify para justificar o texto
+text-indent para deixar um espaço na primeira linha do parágrafo
+line-height: 2 em altura da linha
+*/
+main strong{
+    color: var(--cor4);
+    font-weight: bold;
+}
+/*DESTAQUE DO CONTEÚDO PRINCIPAL
+color 4
+font-weight: negrito
+
+*/
+main a{
+    text-decoration: none;
+    color: var(--cor4);
+    font-weight: bold;
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+/*LINKS CONTEÚDO PRINCIPAL
+text decoration: none
+cor 4
+fonte calibre negrito
+bg cor 1
+padding 2px 6px | para deixar a prencher 2px em cima e baixo e 6 px direita e esquerda
+*/
+main a:hover{
+    color: var(--cor5);
+    text-decoration: underline;
+}
+/*
+cor 5
+sublinhar ao passar o mouse
+*/
+main img{
+    width: 100%;
+}
+/*imagens CONTEUDO PRINCIPAL
+100% largura
+*/
+main img.pequena{
+    display: block;
+    max-width: 350px;
+    margin: auto;
+}
+/*bugdroid config img
+display block para se comportar como bloco
+max-width 350px para quebrar img
+margin auto para alinhar ao centro
+*/
+div.video{
+    background-color: var(--cor5); 
+    padding: 20px; 
+    margin: 0px -20px 30px -20px;
+    padding-bottom: 56.5%;
+    position: relative; 
+}
+/*VIDEO CONTEUDO PRINCIPAL quadro
+podemos utilizar essa gambiarra para ajustar os videos do youtube ou vimeo
+basta deixar o video em posição absolute e da caixa do video em posição relative
+
+bg cor 5
+margin: 0px -20px 30px -20px; para dar espaçamento entre o conteudo de baixo de cima da caixa
+padding-bottom:56.5% para o video não ter bordas
+padding 20px para dar um prechimento assim ajudando a espaçar o conteúdo interno
+posição relativa para o CONTEUDO(video) ficar absoluto a ele.
+ 
+PODEMOS NOTAR QUE USAMOS padding E margin PARA DETERMINAR O TAMANHO DA CAIXA SEM USAR WIDTH E HEIGHT
+*/
+div.video > iframe{
+    position: absolute; 
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90% ;
+}
+/*VIDEO CONTEUDO PRINCIPAL video
+    posicionando o video com o position absolute
+*/
+aside{
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--cor1);
+}
+/*CONTEUDO PERIFÉRICO
+conteúdo logo abaixo do video
+
+border radius arredondar toda caixa do aside 10px
+padding 10px preencher toda caixa do aside por 10px
+bg cor 1
+*/
+aside h3{
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px ;
+    margin: -10px -10px 0px -10px;/*margim negativa para ajustar tela do aside h3*/
+    color: white;
+    background: var(--cor4);
+}
+/*H3 CONTEUDO PERIFÉRICO
+
+border-radius 10px 10px 0px 0px estrategicamente assim para se alinha com as bordas da caixa e deixar abaixo quadrado
+padding 10px preencher o titulo
+margin negativa para ajustar o titulo a caixa
+*/
+aside > ul{
+    list-style-type: '\2714';
+    columns: 2;
+    list-style-position: inside;
+}
+/*LISTA DO CONTEUDO PERIFERICO
+list-style- type para costumizar a marcação da lista com emojis
+utilizando \(CODIGO emojipedia.org) para determinar qual emoji vc irá usar
+columns para determinar o número de colunas
+list- style position inside para deixar dentro da caixa
+*/
+footer{
+    padding: 5px;
+    font-size: 0.8em;
+    text-align: center;
+    color: white;
+    background-color: var(--cor5);
+}
+/*RODAPÉ DO SITE
+padding 5 para dar um preenchimento a mais do que o paragráfo
+font-size: 0.8em deixando menor que paragrafos normais e difenciando dos demais
+bg cor
+cor white para destacar-se sobre bg 
+*/
+footer a{
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+
+}
+/*LINKS RODAPÉ
+cor branca
+text-decoration none para retirar sublinhado
+font-weight bolder para dar mais destaque
+*/
+footer a:hover{
+    color: var(--cor1);
+    text-decoration: underline;
+    
+}
+/*LINK RODAPÉ AO INTERAGIR
+cor 1
+para o usuário saber que se trata de um link
+*/
